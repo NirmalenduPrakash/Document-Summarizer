@@ -17,7 +17,7 @@ Input and validation data can be downloaded from https://github.com/harvardnlp/s
 
 ![network](https://user-images.githubusercontent.com/19767662/76513516-640f9600-6491-11ea-873b-ebd5ba2dc47a.png)
 ```
-Pointer Generator Network explained:
+Pointer Generator Network in brief:
 ```
 * The network has mostly copying capability with some generation capacity
 * A history of encoder attention weights is maintained , to discourage new attention calculation to  
