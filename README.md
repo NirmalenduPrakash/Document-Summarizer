@@ -17,7 +17,7 @@ Input and validation data can be downloaded from https://github.com/harvardnlp/s
 
 ```Pointer Generator Network explained
 Here is my attempt at understanding the network:
-![Image description](https://drive.google.com/open?id=1jExkZKXLeEJNi8ErVQjBihhJeFwKxkhi)
+!(https://drive.google.com/open?id=1jExkZKXLeEJNi8ErVQjBihhJeFwKxkhi)
 * The network has mostly copying capability with some generation capacity
 * A history of encoder attention weights is maintained , to discourage new attention calculation to 
 give much weight to already covered tokens, thus avoiding repetition
