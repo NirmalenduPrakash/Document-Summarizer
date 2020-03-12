@@ -14,9 +14,6 @@ Input and validation data can be downloaded from https://github.com/harvardnlp/s
 * Change the file paths in the params class
 * Run the summarizer.py to train the model 
 ```
-```js
-wrap(str, {cut: true});
-```
 
 ![network](https://user-images.githubusercontent.com/19767662/76513516-640f9600-6491-11ea-873b-ebd5ba2dc47a.png)
 ```Pointer Generator Network explained
