@@ -666,7 +666,7 @@ def predict(sent,v,batch_size=1):
         # top_idx = torch.multinomial(prob_distribution, 1)
         # top_idx = top_idx.squeeze(1).detach()  # detach from history as input
         _, top_idx = decoder_output.data.topk(1)
-        output.append(top_idx)
+        output.append(top_idx.squeeze().data.item())
         enc_attn_weights.append(dec_enc_attn.unsqueeze(0)) 
         decoder_input = top_idx.view(-1)
     output=[vocab[idx] for idx in output]    
