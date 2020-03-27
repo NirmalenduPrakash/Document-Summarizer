@@ -386,8 +386,7 @@ def preprocess(x,y,vocab):
           'x_len':len(vectorized_src), 
           'y_len':len(vectorized_trg)}
 
-def train(dataset,val_dataset,v,embedding_weights):
-    p = Params()
+def train(dataset,val_dataset,v,p,embedding_weights):
     eps = p.eps
     batch_size =p.batch_size
     DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -604,8 +603,7 @@ def train(dataset,val_dataset,v,embedding_weights):
     with open(p.losses_path,'wb') as f:
         pickle.dump(val_losses,f) 
         
-def predict(sent,v,batch_size=1):
-    p=Params()
+def predict(sent,v,p,batch_size=1):
     eps=p.eps
     DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         
@@ -678,12 +676,12 @@ if  __name__== "__main__:
                         truncate_src=p.truncate_src, truncate_tgt=p.truncate_tgt)
     val_dataset=Dataset(p.val_data_path, max_src_len=p.max_src_len, max_tgt_len=p.max_tgt_len,
                         truncate_src=p.truncate_src, truncate_tgt=p.truncate_tgt)
-    
+    p = Params()
     vocab = dataset.build_vocab(embed_file=p.embed_file)
     embedding_weights = torch.from_numpy(v.embeddings)    
-    train(dataset,val_dataset,vocab,embedding_weights)
+    train(dataset,val_dataset,vocab,p,embedding_weights)
     
     #predict
     sent="( cnn student news ) -- april 30 , 2014 <P> another round of severe weather strikes the u.s. , concerns are voiced about whether rio de janeiro will be ready for the 2016 olympics , and a british cancer patient turns his bucket list into a list of ways he 's helped others . we also visit a mexican resort town , and we 'll show you what 's likely the cutest antelope you 've ever seen . <P> on this page you will find today 's show transcript , the daily curriculum , and a place for you to leave feedback . <P> transcript <P> click here to access the transcript of today 's cnn student news program . <P> please note that there may be a delay between the time when the video is available and when the transcript is published . <P> daily curriculum <P> click here for a printable version of the daily curriculum ( pdf ) . <P> media literacy question of the day : <P> what might be the pros and cons of getting vacation information from the destination 's tourism website ? where might you go for additional information ? <P> key concepts : identify or explain these subjects you heard about in today 's show : <P> 1 . international olympic committee ( ioc ) <P> 2 . tourism <P> 3 . `` bucket list '' <P> fast facts : how well were you listening to today 's program ? <P> 1 . about how many people in the u.s. were under the threat of severe weather yesterday ? what states were hit by suspected tornadoes ? what aspects of forecasting and communication are helping to save lives during tornado season ? what challenges to dealing with these storms still exist ? <P> 2 . what city is the site of the 2016 summer olympic games ? according to the head of the international olympic committee , is the city on track to be ready for this event ? explain . how has the city 's mayor responded to this claim ? <P> 3 . where is puerto vallarta located ? what are some of the challenges this resort has faced in recent years ? according to its tourism director , how was puerto vallarta 's tourism industry affected by these challenges ? what are some of the things the resort"
-    summary=predict(sent,v)
+    summary=predict(sent,v,p)
     print(summary)
