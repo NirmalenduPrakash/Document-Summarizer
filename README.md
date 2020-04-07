@@ -15,7 +15,7 @@ Input and validation data can be downloaded from https://github.com/harvardnlp/s
 * Run the summarizer.py to train the model 
 ```
 
-![network](https://user-images.githubusercontent.com/19767662/76513516-640f9600-6491-11ea-873b-ebd5ba2dc47a.png)
+![summarisation](https://user-images.githubusercontent.com/19767662/78631603-64a01e80-78cf-11ea-8375-6282c24e3bb5.jpg)
 ```
 Pointer Generator Network in brief:
 ```
