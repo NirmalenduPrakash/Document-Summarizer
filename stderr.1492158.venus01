@@ -1,0 +1,13 @@
+  0%|          | 0/4486 [00:00<?, ?it/s]/home/svu/e0401988/NLP/summarization/summarizer_transformer.py:151: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  pe = torch.tensor(self.pe[:,:seq_len],requires_grad=False).to(device)
+/home/svu/e0401988/NLP/summarization/summarizer_transformer.py:291: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  gen_output=self.softmax(self.linear(dec_output))
+Traceback (most recent call last):
+  File "/home/svu/e0401988/NLP/summarization/summarizer_transformer.py", line 375, in <module>
+    pred=model(x,y,extra_vocab,expanded_x)
+  File "/usr/local/lib/python3.6/dist-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/svu/e0401988/NLP/summarization/summarizer_transformer.py", line 307, in forward
+    return torch.log(gen_output+1e-5)
+RuntimeError: CUDA out of memory. Tried to allocate 2.78 GiB (GPU 0; 31.72 GiB total capacity; 30.05 GiB already allocated; 46.19 MiB free; 30.62 GiB reserved in total by PyTorch)
+  0%|          | 0/4486 [00:18<?, ?it/s]
