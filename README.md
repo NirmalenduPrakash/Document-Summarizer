@@ -1,9 +1,9 @@
 # Document Summarization NLP
-original paper-https://arxiv.org/pdf/1704.04368.pdf (2016)
-new paper - https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1194/reports/custom/15784595.pdf (2018)
+original paper-https://arxiv.org/pdf/1704.04368.pdf (2016) <br/>
+new paper - https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1194/reports/custom/15784595.pdf (2018) <br/>
 
-summarizer.py - RNN implementation
-summarizer-transformer - Transformer implementation
+summarizer.py - RNN implementation <br/>
+summarizer-transformer - Transformer implementation <br/>
 ```Prerequistes
 * torch
 * pickle
@@ -19,6 +19,7 @@ Input and validation data can be downloaded from https://github.com/harvardnlp/s
 * Run the summarizer.py to train the model 
 ```
 
+RNN model explained:
 ![summarisation](https://user-images.githubusercontent.com/19767662/78631603-64a01e80-78cf-11ea-8375-6282c24e3bb5.jpg)
 ```
 Pointer Generator Network in brief:
