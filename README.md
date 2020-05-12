@@ -1,5 +1,9 @@
 # Document Summarization NLP
-original paper-https://arxiv.org/pdf/1704.04368.pdf
+original paper-https://arxiv.org/pdf/1704.04368.pdf (2016)
+new paper - https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1194/reports/custom/15784595.pdf (2018)
+
+summarizer.py - RNN implementation
+summarizer-transformer - Transformer implementation
 ```Prerequistes
 * torch
 * pickle
