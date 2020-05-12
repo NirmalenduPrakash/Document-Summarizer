@@ -3,7 +3,7 @@ original paper-https://arxiv.org/pdf/1704.04368.pdf (2016) <br/>
 new paper - https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1194/reports/custom/15784595.pdf (2018) <br/>
 
 summarizer.py - RNN implementation <br/>
-summarizer-transformer - Transformer implementation <br/>
+summarizer-transformer.ipynb - Transformer implementation <br/>
 ```Prerequistes
 * torch
 * pickle
